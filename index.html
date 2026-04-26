@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>東京23区 新規法人・移転法人 月次リスト | Yurutility</title>
+  <meta name="description" content="東京23区の新規法人・移転法人を月次で整理した、法人営業向けの実務用CSVです。OA機器・複合機・ビジネスフォン・回線などの新規開拓向けにご活用いただけます。">
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --soft: #eff6ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+      line-height: 1.8;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 40px 32px;
+      margin-bottom: 24px;
+    }
+
+    .label {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: 34px;
+      line-height: 1.35;
+      letter-spacing: 0.02em;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .button:hover {
+      background: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: #fff;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 22px;
+    }
+
+    .price {
+      font-size: 30px;
+      font-weight: 800;
+      margin: 8px 0;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 15px;
+    }
+
+    .table th,
+    .table td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .table th {
+      background: #f9fafb;
+      width: 28%;
+    }
+
+    .notice {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 14px;
+      padding: 16px;
+      color: #78350f;
+      font-size: 14px;
+    }
+
+    .footer {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 24px 0 0;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 28px 22px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .lead {
+        font-size: 16px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="label">法人営業向け 月次CSV</div>
+      <h1>東京23区 新規法人・移転法人 月次リスト</h1>
+      <p class="lead">
+        営業先の判断を軽くする、東京23区の月次法人データです。
+      </p>
+      <p>
+        法人番号公表サイトの差分データをもとに、東京23区の新規法人・移転法人を営業向けに整理しています。
+        OA機器・複合機・ビジネスフォン・回線など、開業直後・移転直後の法人確認に使いやすい実務用CSVです。
+      </p>
+      <div class="cta">
+        <a class="button" href="mailto:yurutility.lab@gmail.com?subject=東京23区%20新規法人・移転法人%20月次リストについて&body=Yurutility%20%7C%20ゆるティリティ技術部%20宛%0D%0A%0D%0A東京23区%20新規法人・移転法人%20月次リストについて問い合わせます。%0D%0A%0D%0A会社名：%0D%0Aお名前：%0D%0Aご質問内容：">
+          メールで問い合わせる
+        </a>
+        <a class="button secondary" href="https://x.com/yurutility_lab" target="_blank" rel="noopener">
+          Xを見る
+        </a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>新規法人</h3>
+        <p>
+          当月に新たに法人番号が指定された法人を整理します。
+        </p>
+      </div>
+      <div class="card">
+        <h3>移転法人</h3>
+        <p>
+          当月に国内所在地変更があった法人を整理します。
+        </p>
+      </div>
+      <div class="card">
+        <h3>東京23区特化</h3>
+        <p>
+          対象地域を東京23区に絞り、営業確認しやすい形にします。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>このリストで確認できること</h2>
+      <ul>
+        <li>今月の新規法人</li>
+        <li>今月の移転法人</li>
+        <li>法人名、法人番号、対象日、市区町村、住所</li>
+        <li>法人種別、活動ランク、住所判定、備考</li>
+        <li>営業先確認に使いやすい顧客向けCSV</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>想定している利用シーン</h2>
+      <table class="table">
+        <tr>
+          <th>対象業種</th>
+          <td>OA機器、複合機、ビジネスフォン、通信回線、クラウドPBX、法人向けIT支援など</td>
+        </tr>
+        <tr>
+          <th>用途</th>
+          <td>開業直後・移転直後の法人確認、新規開拓先の一次選定、営業先リスト作成の補助</td>
+        </tr>
+        <tr>
+          <th>納品形式</th>
+          <td>CSVファイル</td>
+        </tr>
+        <tr>
+          <th>納品頻度</th>
+          <td>月1回</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>価格</h2>
+      <p class="price">月額 5,000円</p>
+      <p class="small">
+        新規法人版CSV、移転法人版CSVの2本セットを想定しています。
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>データについて</h2>
+      <p>
+        本リストは、公的に公開されている法人番号公表サイトの差分データをもとに、
+        営業判断しやすい形へ整理した月次資料です。
+      </p>
+      <p>
+        完全な企業データベースではなく、営業先候補を確認するための軽量な実務資料としてご利用いただく想定です。
+      </p>
+      <div class="notice">
+        本資料は営業判断の補助を目的としたものであり、掲載法人の需要、成約、営業成果を保証するものではありません。
+        住所判定や備考は機械的な整理を含むため、最終的な確認は利用者様側でお願いいたします。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>お問い合わせ</h2>
+      <p>
+        サンプルCSVや月次版の件数感については、メールにてお問い合わせください。
+      </p>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:yurutility.lab@gmail.com">yurutility.lab@gmail.com</a>
+      </p>
+      <p>
+        <strong>X:</strong>
+        <a href="https://x.com/yurutility_lab" target="_blank" rel="noopener">@yurutility_lab</a>
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p>Yurutility | ゆるティリティ技術部</p>
+      <p>東京23区の新規法人・移転法人データを月次で整理しています。</p>
+    </footer>
+  </main>
+</body>
+</html>
