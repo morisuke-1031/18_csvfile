@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>東京23区 今月動いた法人リスト | 東京法人データラボ</title>
-  <meta name="description" content="東京23区の新規法人・移転法人を月次で整理した、新規開拓・提携先探し向けの実務用CSVです。法人番号公表サイトの公開情報をもとに、今月動きがあった法人を確認しやすい形に整理しています。">
+  <meta name="description" content="東京23区の新規法人・移転法人を月次で整理した、新規開拓・提携先探し向けの実務用Excelです。通常版と公式HP候補リンク付きのHP確認版をご用意しています。">
 
   <style>
     :root {
@@ -360,17 +360,48 @@
       white-space: nowrap;
     }
 
+    .price-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
     .price-box {
       display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
+      flex-direction: column;
+      gap: 14px;
       justify-content: space-between;
       border: 1px solid #bfdbfe;
       background: #eff6ff;
       border-radius: 18px;
       padding: 22px;
-      margin-top: 12px;
+      min-height: 245px;
+    }
+
+    .price-box.featured {
+      border-color: #fed7aa;
+      background: #fff7ed;
+      position: relative;
+    }
+
+    .price-badge {
+      display: inline-flex;
+      width: fit-content;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 900;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--amber-dark);
+      margin-bottom: 8px;
+    }
+
+    .plan-name {
+      font-size: 18px;
+      font-weight: 900;
+      margin: 0 0 4px;
     }
 
     .price {
@@ -553,6 +584,14 @@
         padding: 24px 20px;
       }
 
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-box {
+        min-height: auto;
+      }
+
       .contact-box {
         grid-template-columns: 1fr;
       }
@@ -600,7 +639,7 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="label-row">
-          <div class="label">月次CSV</div>
+          <div class="label">月次Excel</div>
           <div class="label amber">東京23区特化</div>
           <div class="label green">新規・移転法人</div>
         </div>
@@ -608,12 +647,12 @@
         <h1>東京23区 今月動いた法人リスト</h1>
 
         <p class="lead">
-          新規開拓先・提携先探しの参考に使える月次CSVです。
+          新規開拓先・提携先探しの参考に使える月次Excelです。
         </p>
 
         <p class="hero-copy">
-          法人番号公表サイトの公開情報をもとに、東京23区で新設・移転があった法人を月次で整理しています。<br>
-          開業直後・移転直後の法人様や、法人向け営業を行う企業様が、営業先候補や提携先候補を確認するための実務用CSVです。
+          ネット上で公開されている情報をもとに、東京23区で新設・移転があった法人を月次で整理しています。<br>
+          開業直後・移転直後の法人様や、法人向け営業を行う企業様が、営業先候補や提携先候補を確認するための実務用データです。
         </p>
 
         <div class="cta">
@@ -641,7 +680,7 @@
         <div class="icon">新</div>
         <h3>新規法人</h3>
         <p>
-          当月に新たに法人番号が指定された法人を整理します。
+          当月に新しく確認された法人を整理します。
         </p>
       </div>
 
@@ -649,21 +688,21 @@
         <div class="icon">移</div>
         <h3>移転法人</h3>
         <p>
-          当月に国内所在地変更があった法人を整理します。
+          当月に所在地の変更が確認された法人を整理します。
         </p>
       </div>
 
       <div class="card">
-        <div class="icon">23</div>
-        <h3>東京23区特化</h3>
+        <div class="icon">HP</div>
+        <h3>HP確認版も用意</h3>
         <p>
-          対象地域を東京23区に絞り、確認しやすいCSVにします。
+          上位版では、公式HP候補URLとクリック用リンク列を付けて確認しやすくします。
         </p>
       </div>
     </section>
 
     <section class="section accent">
-      <h2>営業先・提携先探しの手間を減らすための月次CSVです</h2>
+      <h2>営業先・提携先探しの手間を減らすための月次データです</h2>
       <p>
         新規法人や移転法人は、事業開始・営業活動・取引先開拓・オフィス環境の見直しなど、
         何らかの動きが発生しやすいタイミングです。
@@ -688,7 +727,8 @@
         <li>今月の移転法人</li>
         <li>法人名、法人番号、対象日、市区町村、住所</li>
         <li>法人種別、活動ランク、住所判定、備考</li>
-        <li>新規開拓・提携先探しに使いやすい顧客向けCSV</li>
+        <li>通常版：新規開拓・提携先探しに使いやすい月次Excel</li>
+        <li>HP確認版：公式HP候補URL、クリック用リンク列付きの確認しやすいExcel</li>
       </ul>
     </section>
 
@@ -709,7 +749,7 @@
         </tr>
         <tr>
           <th>納品形式</th>
-          <td>CSVファイル</td>
+          <td>Excelファイル</td>
         </tr>
         <tr>
           <th>納品頻度</th>
@@ -720,23 +760,56 @@
 
     <section class="section">
       <h2>価格</h2>
-      <div class="price-box">
-        <div>
-          <p class="price">月額 5,000円</p>
-          <p class="price-sub">新規法人版CSV・移転法人版CSVの2本セットを想定しています。</p>
+      <p>
+        まずは通常版から始められます。公式HP候補まで確認したい方向けに、HP確認版もご用意しています。
+      </p>
+
+      <div class="price-grid">
+        <div class="price-box">
+          <div>
+            <p class="plan-name">通常版</p>
+            <p class="price">月額 5,000円</p>
+            <p class="price-sub">
+              東京23区の新規法人・移転法人リストを、月次Excelでお送りします。
+            </p>
+          </div>
+
+          <div>
+            <div class="chips">
+              <span class="chip">東京23区</span>
+              <span class="chip">月1回納品</span>
+              <span class="chip">新規・移転法人</span>
+              <span class="chip">Excel納品</span>
+            </div>
+          </div>
         </div>
-        <div class="chips">
-          <span class="chip">東京23区</span>
-          <span class="chip">月1回納品</span>
-          <span class="chip">CSV納品</span>
+
+        <div class="price-box featured">
+          <div>
+            <span class="price-badge">確認しやすい上位版</span>
+            <p class="plan-name">HP確認版</p>
+            <p class="price">月額 10,000円</p>
+            <p class="price-sub">
+              通常版に加えて、公式HP候補URLとクリック用リンク列を付けた上位版です。
+            </p>
+          </div>
+
+          <div>
+            <div class="chips">
+              <span class="chip">公式HP候補付き</span>
+              <span class="chip">リンク列あり</span>
+              <span class="chip">Excel納品</span>
+              <span class="chip">営業確認しやすい</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>サンプルCSVについて</h2>
+      <h2>サンプルについて</h2>
       <p>
-        ご希望の方には、参考用のサンプルCSVをお送りします。
+        ご希望の方には、参考用のサンプルをお送りします。
         実際の月次版の雰囲気や、列構成、確認しやすさをご覧いただけます。
       </p>
       <p>
@@ -745,9 +818,9 @@
       <div class="cta">
         <a
           class="button"
-          href="mailto:yurutility.lab@gmail.com?subject=サンプルCSV希望&body=東京法人データラボ%20宛%0D%0A%0D%0AサンプルCSVを希望します。%0D%0A%0D%0A会社名：%0D%0Aお名前：%0D%0A"
+          href="mailto:yurutility.lab@gmail.com?subject=サンプル希望&body=東京法人データラボ%20宛%0D%0A%0D%0Aサンプルを希望します。%0D%0A%0D%0A会社名：%0D%0Aお名前：%0D%0A希望プラン：通常版 / HP確認版 / 未定%0D%0A"
         >
-          サンプルCSVについて問い合わせる
+          サンプルについて問い合わせる
         </a>
       </div>
     </section>
@@ -755,7 +828,7 @@
     <section class="section">
       <h2>データについて</h2>
       <p>
-        本リストは、公的に公開されている法人番号公表サイトの差分データをもとに、
+        本リストは、ネット上で公開されている法人関連情報をもとに、
         新規開拓・提携先探しの参考資料として確認しやすい形へ整理した月次資料です。
       </p>
       <p>
@@ -763,7 +836,8 @@
       </p>
       <div class="notice">
         本資料は営業判断の補助を目的としたものであり、掲載法人の需要、成約、営業成果を保証するものではありません。
-        住所判定や備考は機械的な整理を含むため、最終的な確認は利用者様側でお願いいたします。
+        住所判定や備考、公式HP候補URLは機械的な整理および目視確認を含む場合があります。
+        最終的な確認は利用者様側でお願いいたします。
       </div>
     </section>
 
@@ -774,7 +848,7 @@
         <details>
           <summary>どのような形式で届きますか？</summary>
           <p>
-            CSVファイルでお送りします。新規法人版と移転法人版の2本セットを想定しています。
+            Excelファイルでの納品を想定しています。HP確認版では、公式HP候補URLやクリック用リンク列を含むExcelでお送りします。
           </p>
         </details>
 
@@ -782,6 +856,14 @@
           <summary>対象地域はどこですか？</summary>
           <p>
             現時点では東京23区を対象にしています。
+          </p>
+        </details>
+
+        <details>
+          <summary>通常版とHP確認版の違いは何ですか？</summary>
+          <p>
+            通常版は、新規法人・移転法人の基本情報を確認しやすく整理したリストです。
+            HP確認版は、通常版に加えて公式HP候補URLとクリック用リンク列を付け、営業先候補を確認しやすくした上位版です。
           </p>
         </details>
 
@@ -796,7 +878,8 @@
         <details>
           <summary>サンプルは確認できますか？</summary>
           <p>
-            はい。メールでお問い合わせいただければ、参考用のサンプルCSVをご案内します。
+            はい。メールでお問い合わせいただければ、参考用のサンプルをご案内します。
+            通常版またはHP確認版のどちらに関心があるかもあわせてお知らせください。
           </p>
         </details>
 
@@ -814,7 +897,7 @@
         <div>
           <h2>お問い合わせ</h2>
           <p>
-            サンプルCSVや月次版の件数感については、メールにてお問い合わせください。
+            サンプルや月次版の件数感については、メールにてお問い合わせください。
           </p>
           <p>
             <strong>Email:</strong>
@@ -825,7 +908,7 @@
         <div class="contact-actions">
           <a
             class="button"
-            href="mailto:yurutility.lab@gmail.com?subject=東京23区%20今月動いた法人リストについて&body=東京法人データラボ%20宛%0D%0A%0D%0A東京23区%20今月動いた法人リストについて問い合わせます。%0D%0A%0D%0A会社名：%0D%0Aお名前：%0D%0Aご質問内容："
+            href="mailto:yurutility.lab@gmail.com?subject=東京23区%20今月動いた法人リストについて&body=東京法人データラボ%20宛%0D%0A%0D%0A東京23区%20今月動いた法人リストについて問い合わせます。%0D%0A%0D%0A会社名：%0D%0Aお名前：%0D%0A関心のあるプラン：通常版 / HP確認版 / 未定%0D%0Aご質問内容："
           >
             メールで問い合わせる
           </a>
